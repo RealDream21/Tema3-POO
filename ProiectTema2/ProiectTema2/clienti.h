@@ -1,8 +1,19 @@
 #pragma once
 #include "abonament.h"
 #include "persoana.h"
+#include "container.h"
 #include <vector>
-
+/*
+class specifics 
+{
+	specifics() = default;
+public:
+	virtual void print();
+	virtual void printStandard()const;
+	virtual void printPremium()const;
+	virtual float castigTotal()const;
+};
+*/
 
 class Clienti
 {
@@ -18,5 +29,12 @@ public:
 	float castigTotal()const;
 };
 
+class ClientiContainer : public Container<Abonat>
+{
 
-
+public:
+	void print();
+	void printStandard()const;
+	void printPremium()const;
+	float castigTotal()const;
+};

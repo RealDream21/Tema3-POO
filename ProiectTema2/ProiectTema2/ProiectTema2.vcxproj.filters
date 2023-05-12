@@ -27,6 +27,9 @@
     <ClCompile Include="clienti.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abonament.h">
@@ -36,6 +39,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="clienti.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="container.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="container.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

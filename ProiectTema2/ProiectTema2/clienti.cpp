@@ -58,3 +58,40 @@ float Clienti::castigTotal()const
 	}
 	return castig;
 }
+
+void ClientiContainer::print()
+{
+	for (int i = 0; i < lista.size(); i++)
+	{
+		lista[i]->showInfo();
+		std::cout << std::endl;
+	}
+}
+
+void ClientiContainer::printStandard()const
+{
+	for (int i = 0; i < lista.size(); i++) {
+		if (lista[i]->tip() == "standard") {
+			lista[i]->showInfo();
+			std::cout << std::endl;
+		}
+	}
+}
+
+void ClientiContainer::printPremium()const
+{
+	for (int i = 0; i < lista.size(); i++) {
+		if (lista[i]->tip() == "premium") {
+			lista[i]->showInfo();
+			std::cout << std::endl;
+		}
+	}
+}
+float ClientiContainer::castigTotal()const
+{
+	float castig = 0;
+	for (int i = 0; i < lista.size(); i++) {
+		castig += lista[i]->castig();
+	}
+	return castig;
+}

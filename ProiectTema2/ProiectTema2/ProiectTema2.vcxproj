@@ -129,12 +129,15 @@
   <ItemGroup>
     <ClCompile Include="abonament.cpp" />
     <ClCompile Include="clienti.cpp" />
+    <ClCompile Include="container.cpp" />
     <ClCompile Include="persoana.cpp" />
     <ClCompile Include="ProiectTema2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abonament.h" />
     <ClInclude Include="clienti.h" />
+    <ClInclude Include="container.h" />
+    <ClInclude Include="container.hpp" />
     <ClInclude Include="persoana.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

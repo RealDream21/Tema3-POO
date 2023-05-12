@@ -1,12 +1,26 @@
 //#include "abonament.h"
 //#include "persoana.h"
 #include "clienti.h"
+#include "container.cpp"
+
+/*
+---------TASKS---------
+    FUNCTIE TEMPLATE 
+    CLASA TEMPLATE <--- DONE
+
+   2/3 DESIGN PATTERNS
+   3 daca e cv simplu
+   idei: meniu sa fie un design pattern de genul logger
+   eventual sa am abonament builder
+*/
+
 
 int main()
 {
-    Clienti listaClienti;
+    ClientiContainer listaClienti;
 
     std::string menuItem = "";
+
 
     while (true) {
         system("cls");
@@ -20,7 +34,7 @@ int main()
                 Abonat abonat;
                 std::cin >> abonat;
                 std::unique_ptr<Abonat> abonatToAdd = std::make_unique<Abonat>(abonat);
-                listaClienti.appendClient(abonatToAdd);
+                listaClienti.appendElement(abonatToAdd);
                 std::cout << "Am citit abonamentul cu succes. Apasa ENTER pentru a continua\n";
             }
             catch (std::exception& err) {
