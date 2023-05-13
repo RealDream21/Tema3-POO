@@ -1,6 +1,7 @@
 //#include "abonament.h"
 //#include "persoana.h"
 #include "clienti.h"
+#include "AbonatBuilder.h"
 #include "container.cpp"
 
 /*
@@ -9,6 +10,8 @@
     CLASA TEMPLATE <--- DONE
 
    2/3 DESIGN PATTERNS
+   1.Abonat builder <--- DONE
+   2.Meniu singleton maybe
    3 daca e cv simplu
    idei: meniu sa fie un design pattern de genul logger
    eventual sa am abonament builder
@@ -21,6 +24,8 @@ int main()
 
     std::string menuItem = "";
 
+    AbonatBuilder* ab_builder = new AbonatBuilder();
+    BuilderManager build_manager;
 
     while (true) {
         system("cls");
@@ -31,8 +36,9 @@ int main()
 
         if (menuItem == "1") {
             try {
-                Abonat abonat;
-                std::cin >> abonat;
+                build_manager.set_builder(ab_builder);
+                build_manager.buildItem();
+                Abonat abonat = *ab_builder->buildProduct();
                 std::unique_ptr<Abonat> abonatToAdd = std::make_unique<Abonat>(abonat);
                 listaClienti.appendElement(abonatToAdd);
                 std::cout << "Am citit abonamentul cu succes. Apasa ENTER pentru a continua\n";

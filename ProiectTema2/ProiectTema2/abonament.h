@@ -5,6 +5,7 @@
 
 class Abonament_pur
 {
+
 public:
 	virtual void showInfo()const = 0;
 	virtual void setInfo() = 0;
@@ -31,10 +32,10 @@ public:
 	friend std::istream& operator>>(std::istream&is, Abonament& abonament);
 	friend std::istream& operator>>(std::istream&is, Abonament* abonament_ptr);
 	//friend std::istream& operator>>(std::istream&is, std::shared_ptr<Abonament>&);
-	virtual void showInfo()const;
-	virtual void setInfo();
-	virtual int getReducere();
-	virtual float castig()const;
+	virtual void showInfo()const override;
+	virtual void setInfo()override;
+	virtual int getReducere()override;
+	virtual float castig()const override;
 	static void cateAbonamente();
 };
 

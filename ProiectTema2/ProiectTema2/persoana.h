@@ -3,12 +3,13 @@
 
 class Persoana
 {
-protected:
+public:
 	static int nr_persoane;
-	int id; //se poate schimba in const daca nu am cin
+	int id;
 	std::string nume;
 	std::string cnp;
-public:
+
+	friend class AbonatBulder;
 	Persoana(const std::string&nume, const std::string&cnp, const int id);
 	Persoana(const std::string&&nume, const std::string&cnp, const int id);
 	Persoana(const std::string&nume, const std::string&&cnp, const int id);
@@ -25,18 +26,18 @@ public:
 
 class Abonat : public Persoana
 {
+public:
 	static int nr_persoane_abonate;
-	//eventual trebuie rescrise toate functiile de constructor cu shared_ptr dar pentru ptr normal 
 	std::string nr_telefon;
 	std::unique_ptr<Abonament> abonament;
-public:
+
 	Abonat(const std::string&nr_telefon, const std::string&nume, const std::string&cnp, const int id);
 	Abonat(const std::string&&nr_telefon, const std::string&&nume, const std::string&&cnp, const int id);
-	Abonat(const std::string&&nr_telefon, const std::string&&nume, const std::string&&cnp, const int id, std::unique_ptr<Abonament>& abonament); //<----- trebuie rescrisa pentru Abonament* abonament;
+	Abonat(const std::string&&nr_telefon, const std::string&&nume, const std::string&&cnp, const int id, std::unique_ptr<Abonament>& abonament);
 	Abonat(const std::string&nr_telefon, const Persoana&persoana);
 	Abonat(const std::string&&nr_telefon, const Persoana&persoana);
-	Abonat(const std::string&nr_telefon, const Persoana&persoana, std::unique_ptr<Abonament>&abonament); //<----- trebuie rescrisa pentru Abonament* abonament;
-	Abonat(const std::string&&nr_telefon, const Persoana&persoana, std::unique_ptr<Abonament>&abonament); //<----- trebuie rescrisa pentru Abonament* abonament;
+	Abonat(const std::string&nr_telefon, const Persoana&persoana, std::unique_ptr<Abonament>&abonament);
+	Abonat(const std::string&&nr_telefon, const Persoana&persoana, std::unique_ptr<Abonament>&abonament);
 	Abonat(Abonat&abonat); // de scris
 	Abonat();
 	~Abonat();
@@ -51,5 +52,6 @@ public:
 	float castig()const;
 	std::string tip();
 	static void catePersoane();
+
 };
 
