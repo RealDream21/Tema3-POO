@@ -131,6 +131,7 @@
     <ClCompile Include="AbonatBuilder.cpp" />
     <ClCompile Include="clienti.cpp" />
     <ClCompile Include="container.cpp" />
+    <ClCompile Include="meniu.cpp" />
     <ClCompile Include="persoana.cpp" />
     <ClCompile Include="ProiectTema2.cpp" />
   </ItemGroup>
@@ -140,6 +141,7 @@
     <ClInclude Include="clienti.h" />
     <ClInclude Include="container.h" />
     <ClInclude Include="container.hpp" />
+    <ClInclude Include="meniu.h" />
     <ClInclude Include="persoana.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
