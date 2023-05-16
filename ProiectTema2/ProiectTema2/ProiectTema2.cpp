@@ -7,6 +7,8 @@
     FUNCTIE TEMPLATE 
     CLASA TEMPLATE <--- DONE
 
+sugestie functie template: la afisare tip in meniu sa nu mai am standard sau premium ci direct tip pt template
+
    2/3 DESIGN PATTERNS
    1.Abonat builder <--- DONE
    2.Meniu singleton <---DONE
