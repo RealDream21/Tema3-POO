@@ -41,7 +41,7 @@ void Meniu::tasta3()const
 
 void Meniu::tasta4()const
 {
-	listaClienti.printPremium();
+    listaClienti.printType<Abonat>(); //problema aici ptr tipul de abonat
 }
 
 void Meniu::tasta5()const

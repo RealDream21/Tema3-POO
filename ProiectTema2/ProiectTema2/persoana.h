@@ -3,12 +3,13 @@
 
 class Persoana
 {
-public:
+protected:
 	static int nr_persoane;
 	int id;
 	std::string nume;
 	std::string cnp;
 
+public:
 	friend class AbonatBulder;
 	Persoana(const std::string&nume, const std::string&cnp, const int id);
 	Persoana(const std::string&&nume, const std::string&cnp, const int id);
@@ -22,15 +23,18 @@ public:
 	friend std::istream& operator>>(std::istream&, Persoana& persoana);
 	virtual void showInfo()const;
 	static void catePersoane();
+	friend class AbonatBuilder;
 };
+
 
 class Abonat : public Persoana
 {
-public:
+protected:
 	static int nr_persoane_abonate;
 	std::string nr_telefon;
 	std::unique_ptr<Abonament> abonament;
 
+public:
 	Abonat(const std::string&nr_telefon, const std::string&nume, const std::string&cnp, const int id);
 	Abonat(const std::string&&nr_telefon, const std::string&&nume, const std::string&&cnp, const int id);
 	Abonat(const std::string&&nr_telefon, const std::string&&nume, const std::string&&cnp, const int id, std::unique_ptr<Abonament>& abonament);
@@ -52,6 +56,6 @@ public:
 	float castig()const;
 	std::string tip();
 	static void catePersoane();
-
+	friend class AbonatBuilder;
 };
 

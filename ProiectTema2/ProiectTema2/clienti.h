@@ -36,5 +36,18 @@ public:
 	void print();
 	void printStandard()const;
 	void printPremium()const;
+	template<typename T>
+	void printType()const
+	{
+		T* newObj = new T();
+		//Abonat* newObj = new Abonat();
+		for (int i = 0; i < lista.size(); i++) {
+			if (lista[i]->tip() == dynamic_cast<Abonat*>(newObj)->tip()) {
+				lista[i]->showInfo();
+				std::cout << std::endl;
+			}
+		}
+		delete newObj;
+	}
 	float castigTotal()const;
 };
