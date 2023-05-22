@@ -57,5 +57,6 @@ public:
 	std::string tip();
 	static void catePersoane();
 	friend class AbonatBuilder;
+	friend class ClientiContainer;
 };
 

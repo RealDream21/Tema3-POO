@@ -36,18 +36,24 @@ public:
 	void print();
 	void printStandard()const;
 	void printPremium()const;
-	template<typename T>
+	template<typename Baza, typename Derivata>
 	void printType()const
 	{
-		T* newObj = new T();
+		//T* newObj = new T(); //t este tipul abonamentului
+		std::unique_ptr<Baza> b = std::make_unique<Baza>();
+		std::unique_ptr<Derivata> d = std::make_unique<Derivata>();
 		//Abonat* newObj = new Abonat();
 		for (int i = 0; i < lista.size(); i++) {
-			if (lista[i]->tip() == dynamic_cast<Abonat*>(newObj)->tip()) {
+			if (typeid(lista[i]->abonament) == typeid(b) && (typeid(b) == typeid(d))) {
+				lista[i]->showInfo();
+				std::cout << std::endl;
+			}
+			else if (typeid(lista[i]->abonament) == typeid(d) && (typeid(b) != typeid(d))) {
 				lista[i]->showInfo();
 				std::cout << std::endl;
 			}
 		}
-		delete newObj;
+		//delete newObj;
 	}
 	float castigTotal()const;
 };

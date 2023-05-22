@@ -13,6 +13,12 @@ Meniu::Meniu()
 	ab_builder = new AbonatBuilder();
 }
 
+Meniu::~Meniu()
+{
+    delete ab_builder;
+    delete meniu_;
+}
+
 Meniu* Meniu::getInstance()
 {
 	if (meniu_ == nullptr)
@@ -36,12 +42,15 @@ void Meniu::tasta2()const
 
 void Meniu::tasta3()const
 {
-	listaClienti.printStandard();
+	//listaClienti.printStandard();
+    listaClienti.printType<Abonament, Abonament>();
 }
 
 void Meniu::tasta4()const
 {
-    listaClienti.printType<Abonat>(); //problema aici ptr tipul de abonat
+    //listaClienti.printPremium();
+    //listaClienti.printType<Abonat>(); //problema aici ptr tipul de abonat
+    listaClienti.printType<Abonament, Abonament_premium>();
 }
 
 void Meniu::tasta5()const

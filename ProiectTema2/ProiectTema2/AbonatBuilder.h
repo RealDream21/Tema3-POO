@@ -18,11 +18,11 @@ class AbonatBuilder : public Builder
 public:
 	AbonatBuilder();
 	~AbonatBuilder();
-	virtual void setAttribute1()const override;
-	virtual void setAttribute2()const override;
-	virtual void setAttribute3()const override;
-	virtual void setAttribute4()const override;
-	virtual void setAttribute5()const override;
+	void setAttribute1()const override;
+	void setAttribute2()const override;
+	void setAttribute3()const override;
+	void setAttribute4()const override;
+	void setAttribute5()const override;
 	Abonat* buildProduct();
 };
 
