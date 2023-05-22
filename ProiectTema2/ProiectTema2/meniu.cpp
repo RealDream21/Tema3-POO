@@ -42,15 +42,15 @@ void Meniu::tasta2()const
 
 void Meniu::tasta3()const
 {
-	//listaClienti.printStandard();
-    listaClienti.printType<Abonament, Abonament>();
+	listaClienti.printStandard();
+    //listaClienti.printType<Abonament, Abonament>();
 }
 
 void Meniu::tasta4()const
 {
     //listaClienti.printPremium();
-    //listaClienti.printType<Abonat>(); //problema aici ptr tipul de abonat
-    listaClienti.printType<Abonament, Abonament_premium>();
+    const char str[] = "premium";
+    listaClienti.printType<str>();
 }
 
 void Meniu::tasta5()const

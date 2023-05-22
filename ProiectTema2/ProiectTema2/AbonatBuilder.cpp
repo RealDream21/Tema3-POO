@@ -14,12 +14,13 @@ void AbonatBuilder::setAttribute1() const
 {
 	std::cout << "Dati id-ul abonatului: " << std::endl;
 	std::cin >> ab->id;
+	std::cin.get();
 }
 
 void AbonatBuilder::setAttribute2()const
 {
 	std::cout << "Dati numele abonatului: " << std::endl;
-	std::cin >> ab->nume;
+	std::getline(std::cin, ab->nume);
 }
 
 void AbonatBuilder::setAttribute3()const
