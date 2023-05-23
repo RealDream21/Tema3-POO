@@ -148,9 +148,9 @@ float Abonament::castig() const
 	return perioada * pret;
 }
 
-void Abonament::cateAbonamente()
+int Abonament::cateAbonamente()
 {
-	std::cout << "Exista " << nr_abonamente << " abonamente standard\n";
+	return nr_abonamente;
 }
 
 
@@ -298,7 +298,7 @@ float Abonament_premium::castig() const
 	return perioada * pret - (reducere / 100) * (perioada * pret);
 }
 
-void Abonament_premium::cateAbonamente()
+int Abonament_premium::cateAbonamente()
 {
-	std::cout << "Exista " << nr_abonamente_premium << " abonamente premium si " << nr_abonamente << " abonamente standard\n";
+	return nr_abonamente_premium;
 }

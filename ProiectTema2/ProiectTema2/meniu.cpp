@@ -8,6 +8,13 @@ AbonatBuilder* Meniu::ab_builder;
 
 BuilderManager Meniu::build_manager;
 
+template <typename T>
+int cate()
+{
+    std::unique_ptr<T> a = std::make_unique<T>();
+    return a->cateAbonamente();
+}
+
 Meniu::Meniu()
 {
 	ab_builder = new AbonatBuilder();
@@ -43,19 +50,26 @@ void Meniu::tasta2()const
 void Meniu::tasta3()const
 {
 	listaClienti.printStandard();
-    //listaClienti.printType<Abonament, Abonament>();
 }
 
 void Meniu::tasta4()const
 {
-    //listaClienti.printPremium();
-    const char str[] = "premium";
-    listaClienti.printType<str>();
+    listaClienti.printPremium();
 }
 
 void Meniu::tasta5()const
 {
 	std::cout << listaClienti.castigTotal() << std::endl;
+}
+
+void Meniu::tasta6()const
+{
+    std::cout << cate<Abonament>();
+}
+
+void Meniu::tasta7()const
+{
+    std::cout << cate<Abonament_premium>();
 }
 
 void Meniu::enterMenu()const
@@ -64,7 +78,7 @@ void Meniu::enterMenu()const
     while (true) {
         system("cls");
         std::cout << "Ce vrei sa faci?: \n";
-        std::cout << " 1-> Adauga o persoana noua\n 2-> Afiseaza toti abonatii\n 3-> Afiseaza abonatii normali\n 4-> Afiseaza abonatii premium\n 5-> Afiseaza profitul total\n 6-> Iesi\n";
+        std::cout << " 1-> Adauga o persoana noua\n 2-> Afiseaza toti abonatii\n 3-> Afiseaza abonatii normali\n 4-> Afiseaza abonatii premium\n 5-> Afiseaza profitul total\n 6-> Cati abonati normali sunt\n 7-> Cati abonati premium sunt\n 8-> Iesi\n";
         std::cout << "Input: ";
         std::cin >> menuItem;
 
@@ -107,6 +121,16 @@ void Meniu::enterMenu()const
             std::cin.get();
         }
         else if (menuItem == "6") {
+            tasta6();
+            std::cin.get();
+            std::cin.get();
+        }
+        else if (menuItem == "7") {
+            tasta7();
+            std::cin.get();
+            std::cin.get();
+        }
+        else if (menuItem == "8") {
             break;
         }
         else {

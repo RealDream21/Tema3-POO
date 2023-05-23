@@ -17,6 +17,8 @@ class Meniu
 	void tasta3() const;
 	void tasta4() const;
 	void tasta5() const;
+	void tasta6() const;
+	void tasta7() const;
 public:
 	static Meniu* getInstance();
 	void enterMenu() const;

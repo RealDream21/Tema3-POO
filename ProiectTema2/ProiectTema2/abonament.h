@@ -36,7 +36,7 @@ public:
 	virtual void setInfo()override;
 	virtual int getReducere()override;
 	virtual float castig()const override;
-	static void cateAbonamente();
+	static int cateAbonamente();
 };
 
 class Abonament_premium : public Abonament
@@ -60,5 +60,5 @@ public:
 	void setInfo()override;
 	int getReducere()override;
 	float castig()const override;
-	static void cateAbonamente();
+	static int cateAbonamente();
 };

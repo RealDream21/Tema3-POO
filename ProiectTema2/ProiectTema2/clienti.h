@@ -3,6 +3,7 @@
 #include "persoana.h"
 #include "container.h"
 #include <vector>
+#include <array>
 /*
 class specifics 
 {
@@ -36,32 +37,5 @@ public:
 	void print();
 	void printStandard()const;
 	void printPremium()const;
-	template<char const * str>
-	void printType()const
-	{
-		//T* newObj = new T(); //t este tipul abonamentului
-		std::unique_ptr<Baza> b = std::make_unique<Baza>();
-		std::unique_ptr<Derivata> d = std::make_unique<Derivata>();
-		//Abonat* newObj = new Abonat();
-		for (int i = 0; i < lista.size(); i++) {
-			if (lista[i]->tip() == str) {
-				lista[i]->showInfo();
-				std::cout << std::endl;
-			}
-		}
-		//delete newObj;
-	}
 	float castigTotal()const;
 };
-/*
-			if (typeid(lista[i]->abonament) == typeid(b) && (typeid(b) == typeid(d))) {
-				lista[i]->showInfo();
-				std::cout << std::endl;
-			}
-			else if (typeid(lista[i]->abonament) == typeid(d) && (typeid(b) != typeid(d))) {
-				lista[i]->showInfo();
-				std::cout << std::endl;
-			}
-
-
-*/
